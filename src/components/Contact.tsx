@@ -1,29 +1,30 @@
 import emailjs from "@emailjs/browser";
+import { Linkedin } from "lucide-react";
 
 export default function Contact() {
-    
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_0yahqma",
-        "template_98wo258",
-        e.currentTarget,
-        "QxNv0aK0haCBu2KYK"
-      )
-      .then(
-        () => {
-          alert("Message sent successfully 🚀");
-          e.currentTarget.reset();
-        },
-        (error) => {
-          alert("Failed to send message ❌");
-          console.error(error);
-        }
-      );
-  };
-    
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                "service_0yahqma",
+                "template_98wo258",
+                e.currentTarget,
+                "QxNv0aK0haCBu2KYK"
+            )
+            .then(
+                () => {
+                    alert("Message sent successfully 🚀");
+                    e.currentTarget.reset();
+                },
+                (error) => {
+                    alert("Failed to send message ❌");
+                    console.error(error);
+                }
+            );
+    };
+
     return (
         <section
             id="contact"
@@ -41,6 +42,16 @@ export default function Contact() {
                         Feel free to reach out.
                     </p>
                 </div>
+
+                <a
+                    href="http://linkedin.com/in/uchenna-akuchie-539b1a217"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:scale-105 transition"
+                >
+                    <Linkedin size={20} />
+                    Connect on LinkedIn
+                </a>
 
                 <div className="text-center mb-8">
                     <p className="text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2">
