@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
+import Project from "./components/Project";
+import Contact from "./components/Contact"
 
 
 function App() {
@@ -18,9 +20,11 @@ function App() {
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="pt-16">
+      <div className="pt-20">
         <Hero />
         <Skills />
+        <Project />
+        <Contact />
       </div>
     </div>
   );
