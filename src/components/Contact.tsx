@@ -8,10 +8,10 @@ export default function Contact() {
 
         emailjs
             .sendForm(
-                "service_0yahqma",
-                "template_98wo258",
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 e.currentTarget,
-                "QxNv0aK0haCBu2KYK"
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(
                 () => {
@@ -20,6 +20,7 @@ export default function Contact() {
                 },
                 (error) => {
                     alert("Failed to send message ❌");
+                    console.error(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
                     console.error(error);
                 }
             );
